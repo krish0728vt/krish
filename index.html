@@ -21,7 +21,7 @@
         header {
             background: #333;
             color: #fff;
-            padding-top: 30px;
+            padding-top: 10px;
             min-height: 70px;
             border-bottom: #77aaff 3px solid;
             position: fixed;
@@ -41,7 +41,7 @@
         }
         header li {
             display: inline;
-            padding: 0 20px 0 20px;
+            padding: 0 10px;
         }
         header #branding {
             float: left;
@@ -66,7 +66,7 @@
             background: url('https://static.vecteezy.com/system/resources/previews/010/872/103/original/abstract-background-of-futuristic-digital-dark-blue-electronic-circuit-line-vector.jpg') no-repeat center center/cover;
             text-align: center;
             color: #fff;
-            margin-top: 100px; /* Adjusted for the fixed header */
+            margin-top: 70px; /* Adjusted for the fixed header */
         }
         #showcase h1 {
             margin-top: 100px;
@@ -120,6 +120,37 @@
         section[id] {
             padding-top: 80px; /* Adjusted for the fixed header height */
             margin-top: -80px; /* Compensate for the padding to ensure smooth scroll */
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 0 5px;
+            }
+            header #branding,
+            header nav {
+                float: none;
+                text-align: center;
+            }
+            header #branding img {
+                height: 40px; /* Adjust the size for smaller screens */
+            }
+            header #branding h1 {
+                font-size: 1.5em;
+            }
+            header nav ul {
+                padding-top: 10px;
+            }
+            header nav ul li {
+                display: block;
+                padding: 10px 0;
+            }
+            #showcase h1 {
+                font-size: 35px;
+                margin-top: 70px; /* Adjusted for the fixed header */
+            }
+            #showcase p {
+                font-size: 18px;
+            }
         }
     </style>
     <script>
