@@ -48,6 +48,14 @@
         }
         header #branding h1 {
             margin: 0;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        header #branding img {
+            float: left;
+            margin-right: 10px;
+            border-radius: 50%;
+            height: 50px; /* Adjust the size as needed */
         }
         header nav {
             float: right;
@@ -101,13 +109,13 @@
             background: #ccc;
         }
         .project-detail {
-    margin-top: 0; /* Increased margin-top to create more space */
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: none;
-    margin-bottom: 20px; /* Added margin-bottom to prevent overlap */
+            margin-top: 0; /* Increased margin-top to create more space */
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            margin-bottom: 20px; /* Added margin-bottom to prevent overlap */
         }
         section[id] {
             padding-top: 80px; /* Adjusted for the fixed header height */
@@ -115,24 +123,24 @@
         }
     </style>
     <script>
-    function toggleProjectDetail(id) {
-    var project = document.getElementById(id);
-    var allProjects = document.querySelectorAll('.project-detail');
-    allProjects.forEach(function(detail) {
-        if (detail !== project) {
-            detail.style.display = 'none';
+        function toggleProjectDetail(id) {
+            var project = document.getElementById(id);
+            var allProjects = document.querySelectorAll('.project-detail');
+            allProjects.forEach(function(detail) {
+                if (detail !== project) {
+                    detail.style.display = 'none';
+                }
+            });
+            project.style.display = (project.style.display === 'none' || project.style.display === '') ? 'block' : 'none';
+            window.scrollTo(0, document.getElementById('projects').offsetTop);
         }
-    });
-    project.style.display = (project.style.display === 'none' || project.style.display === '') ? 'block' : 'none';
-    window.scrollTo(0, document.getElementById('projects').offsetTop);
-}
-
     </script>
 </head>
 <body>
     <header>
         <div class="container">
             <div id="branding">
+                <img src="https://media.licdn.com/dms/image/D4D03AQHkJGbh6xITKw/profile-displayphoto-shrink_400_400/0/1716445940946?e=1721865600&v=beta&t=5cK0wMtUavMJLwt65F0N1cU1cfryRapnZrFaQBxTIWM" alt="Profile Picture">
                 <h1>Krish Ankur Shah</h1>
             </div>
             <nav>
@@ -232,8 +240,8 @@
             </ul>
         </section>
 
-  <section id="project1" class="project-detail" style="margin-top: 30px;">
-    <h2>Fire Alarm System Using IC555</h2>
+        <section id="project1" class="project-detail" style="margin-top: 30px;">
+            <h2>Fire Alarm System Using IC555</h2>
             <p><strong>Description:</strong></p>
             <p>The Fire Alarm System is a simple and cost-effective solution designed to detect fire and alert users. Utilizing the IC555 timer, the system is capable of sensing temperature changes and triggering an alarm when a specified threshold is exceeded.</p>
             <p><strong>Goals:</strong></p>
@@ -267,8 +275,8 @@
             <p>The project successfully produced a functioning fire alarm system that effectively detects temperature rises and sounds an alarm. It proved to be a valuable learning experience in circuit design and practical applications of the IC555 timer.</p>
         </section>
 
-       <section id="project2" class="project-detail" style="margin-top: 30px;">
-    <h2>Obstacle Avoidance Car Using IC</h2>
+        <section id="project2" class="project-detail" style="margin-top: 30px;">
+            <h2>Obstacle Avoidance Car Using IC</h2>
             <p><strong>Description:</strong></p>
             <p>The Obstacle Avoidance Car is an autonomous vehicle designed to navigate and avoid obstacles in its path. By using integrated circuits (ICs) for control and sensors for detection, the car can detect obstacles, stop, and change direction to find a clear path.</p>
             <p><strong>Goals:</strong></p>
@@ -304,8 +312,8 @@
             <p>The project successfully created an obstacle avoidance car that can detect obstacles, stop, and change direction autonomously using ICs. It provided valuable experience in circuit design, sensor integration, and practical applications of ICs.</p>
         </section>
 
-     <section id="project3" class="project-detail" style="margin-top: 30px;">
-    <h2>Pattern Flying Drone</h2>
+        <section id="project3" class="project-detail" style="margin-top: 30px;">
+            <h2>Pattern Flying Drone</h2>
             <p><strong>Description:</strong></p>
             <p>The Pattern Flying Drone is an innovative project where a drone is programmed to fly in a specific pattern. Using FPL code, the drone was made to fly in the pattern spelling out "ECE 2544," representing the class number for which the project was undertaken.</p>
             <p><strong>Goals:</strong></p>
@@ -339,7 +347,7 @@
             <p>The project successfully created a drone that could fly in the specific pattern of "ECE 2544." This demonstrated the ability to program drones for precise and complex flight paths, providing valuable experience in drone technology and flight programming.</p>
         </section>
 
-<section id="project4" class="project-detail" style="margin-top: 30px;">
+        <section id="project4" class="project-detail" style="margin-top: 30px;">
             <h2>Heated Cup Holder</h2>
             <p><strong>Description:</strong></p>
             <p>The Heated Cup Holder is a practical project designed to maintain the temperature of beverages. Utilizing an Arduino and a heat sensor, the system controls the heating of a copper coil wrapped around a steel cup, ensuring the drink stays warm.</p>
@@ -375,7 +383,7 @@
             <p>The project successfully created a heated cup holder that keeps beverages warm by maintaining a set temperature. It provided valuable insights into temperature control, sensor integration, and practical applications of Arduino in everyday devices.</p>
         </section>
 
-<section id="project5" class="project-detail" style="margin-top: 30px;">
+        <section id="project5" class="project-detail" style="margin-top: 30px;">
             <h2>Dinosaur Game on BOOSTXL-EDUMKII and MSP432</h2>
             <p><strong>Description:</strong></p>
             <p>The Dinosaur Game project is a fun and interactive implementation of the classic browser-based game. Using CCS (Code Composer Studio) for coding, the game is designed to run on the BOOSTXL-EDUMKII booster pack and the MSP432 microcontroller, allowing users to play the game directly on a hardware board.</p>
@@ -411,7 +419,7 @@
             <p>The project successfully created a playable version of the Dinosaur Game on the BOOSTXL-EDUMKII and MSP432 board. It provided hands-on experience in embedded system programming, game development, and hardware-software integration.</p>
         </section>
 
-<section id="project6" class="project-detail" style="margin-top: 30px;">
+        <section id="project6" class="project-detail" style="margin-top: 30px;">
             <h2>Reaction Time Tester</h2>
             <p><strong>Description:</strong></p>
             <p>The Reaction Time Tester is a project designed to measure and display the reaction time of a user. Utilizing the MSP432 microcontroller and the BOOSTXL-EDUMKII booster pack, the system uses a TimerA to precisely measure the reaction time when a user responds to a visual cue (an LED turning on).</p>
@@ -447,7 +455,7 @@
             <p>The project successfully created a reaction time tester that accurately measures and displays a user's reaction time. It provided valuable experience in embedded systems programming, timing functions, and hardware-software integration.</p>
         </section>
 
-<section id="project7" class="project-detail" style="margin-top: 30px;">
+        <section id="project7" class="project-detail" style="margin-top: 30px;">
             <h2>LED Pattern Circuit</h2>
             <p><strong>Description:</strong></p>
             <p>The LED Pattern Circuit is a project designed to control LEDs to light up in a specific pattern using an Arduino. The circuit was built on a breadboard, and the Arduino was programmed to sequence the LEDs in the desired pattern.</p>
