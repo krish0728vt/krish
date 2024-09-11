@@ -197,7 +197,7 @@
     <section id="main" class="container">
         <section id="about">
             <h2>About Me</h2>
-            <p>I am a Junior at Virginia Tech studying Electrical Engineering and seeking to explore options in Robotics, Artificial Intelligence, and Machine Learning. I have a keen interest in building and designing circuits.</p>
+            <p>I am a Senior at Virginia Tech studying Electrical Engineering and seeking to explore options in Robotics, Artificial Intelligence, and Machine Learning. I have a keen interest in building and designing circuits.</p>
         </section>
 
         <section id="experience">
