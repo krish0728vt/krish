@@ -1,191 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krish Ankur Shah - Electrical Engineer</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krish Ankur Shah - Electrical Engineer</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    .container {
+      width: 80%;
+      margin: auto;
+      overflow: hidden;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding-top: 10px;
+      min-height: 70px;
+      border-bottom: #77aaff 3px solid;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    header a {
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+    header ul {
+      padding: 0;
+      list-style: none;
+    }
+    header li {
+      display: inline;
+      padding: 0 10px;
+    }
+    header #branding {
+      float: left;
+    }
+    header #branding h1 {
+      margin: 0;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    header #branding img {
+      float: left;
+      margin-right: 10px;
+      border-radius: 50%;
+      height: 50px;
+    }
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+      padding: 15px;
+    }
+    #navbar {
+      float: right;
+      margin-top: 10px;
+    }
+    #navbar ul {
+      margin: 0;
+    }
+    #showcase {
+      min-height: 400px;
+      background: url('https://static.vecteezy.com/system/resources/previews/010/872/103/original/abstract-background-of-futuristic-digital-dark-blue-electronic-circuit-line-vector.jpg') no-repeat center center/cover;
+      text-align: center;
+      color: #fff;
+      margin-top: 70px;
+    }
+    #showcase h1 {
+      margin-top: 100px;
+      font-size: 55px;
+      margin-bottom: 10px;
+    }
+    #showcase p {
+      font-size: 20px;
+    }
+    #main {
+      padding: 20px;
+      background: #fff;
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+    section[id] {
+      padding-top: 80px;
+      margin-top: -80px;
+    }
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+    .skills ul, .experience ul, .education ul, .projects ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .skills ul li, .experience ul li, .education ul li, .projects ul li {
+      background: #eee;
+      margin-bottom: 5px;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .skills ul li:hover, .experience ul li:hover, .education ul li:hover, .projects ul li:hover {
+      background: #ccc;
+    }
+    .project-detail {
+      margin-top: 0;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: none;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 768px) {
+      .container {
+        width: 95%;
+        padding: 0 5px;
+      }
+      header #branding,
+      header nav {
+        float: none;
+        text-align: center;
+      }
+      .hamburger {
+        display: block;
+        float: right;
+      }
+      #navbar {
+        display: none;
+        width: 100%;
+        background: #333;
+      }
+      #navbar ul {
+        display: block;
+        text-align: center;
+        padding: 0;
+      }
+      #navbar ul li {
+        display: block;
+        padding: 10px 0;
+      }
+      #navbar.show {
+        display: block;
+      }
+      #showcase h1 {
+        font-size: 35px;
+        margin-top: 70px;
+      }
+      #showcase p {
+        font-size: 18px;
+      }
+    }
+  </style>
+  <script>
+    function toggleProjectDetail(id) {
+      var project = document.getElementById(id);
+      var allProjects = document.querySelectorAll('.project-detail');
+      allProjects.forEach(function(detail) {
+        if (detail !== project) {
+          detail.style.display = 'none';
         }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding-top: 10px;
-            min-height: 70px;
-            border-bottom: #77aaff 3px solid;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-        header a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
-        }
-        header ul {
-            padding: 0;
-            list-style: none;
-        }
-        header li {
-            display: inline;
-            padding: 0 10px;
-        }
-        header #branding {
-            float: left;
-        }
-        header #branding h1 {
-            margin: 0;
-            display: inline-block;
-            vertical-align: middle;
-        }
-        header #branding img {
-            float: left;
-            margin-right: 10px;
-            border-radius: 50%;
-            height: 50px; /* Adjust the size as needed */
-        }
-        header nav {
-            float: right;
-            margin-top: 10px;
-        }
-        #showcase {
-            min-height: 400px;
-            background: url('https://static.vecteezy.com/system/resources/previews/010/872/103/original/abstract-background-of-futuristic-digital-dark-blue-electronic-circuit-line-vector.jpg') no-repeat center center/cover;
-            text-align: center;
-            color: #fff;
-            margin-top: 70px; /* Adjusted for the fixed header */
-        }
-        #showcase h1 {
-            margin-top: 100px;
-            font-size: 55px;
-            margin-bottom: 10px;
-        }
-        #showcase p {
-            font-size: 20px;
-        }
-        #main {
-            padding: 20px;
-            background: #fff;
-            margin-bottom: 20px;
-            margin-top: 20px; /* Adjusted for reduced space */
-        }
-        .skills, .experience, .education, .projects, .contact {
-            margin-bottom: 20px;
-        }
-        h2 {
-            color: #333;
-        }
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
-        }
-        .skills ul, .experience ul, .education ul, .projects ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .skills ul li, .experience ul li, .education ul li, .projects ul li {
-            background: #eee;
-            margin-bottom: 5px;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        .skills ul li:hover, .experience ul li:hover, .education ul li:hover, .projects ul li:hover {
-            background: #ccc;
-        }
-        .project-detail {
-            margin-top: 0; /* Increased margin-top to create more space */
-            padding: 20px;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: none;
-            margin-bottom: 20px; /* Added margin-bottom to prevent overlap */
-        }
-        section[id] {
-            padding-top: 80px; /* Adjusted for the fixed header height */
-            margin-top: -80px; /* Compensate for the padding to ensure smooth scroll */
-        }
-        @media (max-width: 768px) {
-            .container {
-                width: 95%;
-                padding: 0 5px;
-            }
-            header #branding,
-            header nav {
-                float: none;
-                text-align: center;
-            }
-            header #branding img {
-                height: 40px; /* Adjust the size for smaller screens */
-            }
-            header #branding h1 {
-                font-size: 1.5em;
-            }
-            header nav ul {
-                padding-top: 10px;
-            }
-            header nav ul li {
-                display: block;
-                padding: 10px 0;
-            }
-            #showcase h1 {
-                font-size: 35px;
-                margin-top: 70px; /* Adjusted for the fixed header */
-            }
-            #showcase p {
-                font-size: 18px;
-            }
-        }
-    </style>
-    <script>
-        function toggleProjectDetail(id) {
-            var project = document.getElementById(id);
-            var allProjects = document.querySelectorAll('.project-detail');
-            allProjects.forEach(function(detail) {
-                if (detail !== project) {
-                    detail.style.display = 'none';
-                }
-            });
-            project.style.display = (project.style.display === 'none' || project.style.display === '') ? 'block' : 'none';
-            window.scrollTo(0, document.getElementById('projects').offsetTop);
-        }
-    </script>
+      });
+      project.style.display = (project.style.display === 'none' || project.style.display === '') ? 'block' : 'none';
+      window.scrollTo(0, document.getElementById('projects').offsetTop);
+    }
+    function toggleMenu() {
+      var nav = document.getElementById("navbar");
+      nav.classList.toggle("show");
+    }
+  </script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div id="branding">
-                <img src="https://media.licdn.com/dms/image/D4D03AQHkJGbh6xITKw/profile-displayphoto-shrink_400_400/0/1716445940946?e=1721865600&v=beta&t=5cK0wMtUavMJLwt65F0N1cU1cfryRapnZrFaQBxTIWM" alt="Profile Picture">
-                <h1>Krish Ankur Shah</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#experience">Work Experience</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <header>
+    <div class="container">
+      <div id="branding">
+        <img src="https://media.licdn.com/dms/image/D4D03AQHkJGbh6xITKw/profile-displayphoto-shrink_400_400/0/1716445940946?e=1721865600&v=beta&t=5cK0wMtUavMJLwt65F0N1cU1cfryRapnZrFaQBxTIWM" alt="Profile Picture">
+        <h1>Krish Ankur Shah</h1>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <nav id="navbar">
+        <ul>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#experience">Work Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
     <section id="showcase">
         <div class="container">
@@ -197,33 +214,52 @@
     <section id="main" class="container">
         <section id="about">
             <h2>About Me</h2>
-            <p>I am a Junior at Virginia Tech studying Electrical Engineering and seeking to explore options in Robotics, Artificial Intelligence, and Machine Learning. I have a keen interest in building and designing circuits.</p>
+            <p>I am a Senior at Virginia Tech studying Electrical Engineering and seeking to explore options in Robotics, Artificial Intelligence, and Machine Learning. I have a keen interest in building and designing circuits.</p>
         </section>
 
-        <section id="experience">
-            <h2>Work Experience</h2>
-            <h3>Engineer Embedded Systems at Krishna Defence and Allied Industries Ltd, Mumbai</h3>
-            <p>May 2023 – August 2023</p>
-            <ul>
-                <li>Collaborated in the development of a circuit that powers a fan with a Solar/AC/8-hour battery prioritizing green energy.</li>
-                <li>Aided in manufacturing the enclosure of the above-mentioned electronic circuit which enclosed the battery, circuit, and an external fuse in case of a short circuit.</li>
-                <li>Helped in designing the CAD files for the enclosure.</li>
-            </ul>
+      <section id="experience">
+    <h2>Work Experience</h2>
 
-            <h3>Summer Trainee at RELIANCE RETAIL, Mumbai</h3>
-            <p>June 2022 – August 2023</p>
-            <ul>
-                <li>Collaborated in creating "TRUUTH".</li>
-                <li>Did market research for finding target audience for people who need home delivery of medication.</li>
-                <li>Found a plan of how to reach out to people who needed the service.</li>
-            </ul>
+<h3>Project Coordinator at Krishna Defence and Allied Industries Limited, Mumbai</h3>
+<p>December 2024 – August 2025
+<ul>
+    <li>Led a collaboration between Krishna Defence and two engineering colleges (VJTI and VESIT) on a project to develop a smart forklift for warehouse management.</li>
+    <li>Coordinated cross-functional teams and provided technical guidance throughout the project lifecycle.</li>
+    <li>Focused on integrating UWB (Ultra-Wideband) technology and ArUco markers for precise indoor positioning and tracking within the warehouse.</li>
+    <li>Helped align academic innovation with real-world industrial applications in logistics automation.</li>
+</ul>
 
-            <h3>Project Head at Automation Anywhere, Virtual</h3>
-            <p>April 2022 – July 2023</p>
-            <ul>
-                <li>Created bots that help clear blurred images on bills.</li>
-                <li>Identified and resolved project issues quickly and efficiently, minimizing their impact on project progress.</li>
-            </ul>
+    <h3>Project Manager at Krishna Defence and Allied Industries Limited, Mumbai</h3>
+    <p>May 2024 – August 2024 
+    <ul>
+        <li>Contributed to the development of a product called snow tuggers, designed to assist soldiers in walking on snowy terrain.</li>
+        <li>These attachments increase the surface area of a soldier’s footwear, preventing it from sinking into snow and improving mobility.</li>
+        <li>Focused on optimizing the design for performance and durability using extrusion and plastics manufacturing techniques.</li>
+        <li>Collaborated with the product testing team to validate the design in simulated field environments.</li>
+    </ul>
+
+    <h3>Engineer Embedded Systems at Krishna Defence and Allied Industries Limited, Mumbai</h3>
+    <p>May 2023 – August 2023</p>
+    <ul>
+        <li>Collaborated in the development of a circuit that powers a fan with Solar/AC/8-hour battery, prioritizing green energy.</li>
+        <li>Assisted in manufacturing the enclosure housing the battery, circuit, and an external fuse for safety.</li>
+        <li>Contributed to the design of CAD files for the enclosure using SolidWorks.</li>
+    </ul>
+
+    <h3>Summer Trainee at RELIANCE RETAIL, Mumbai</h3>
+    <p>June 2022 – August 2023</p>
+    <ul>
+        <li>Collaborated on the development of "TRUUTH", a home medication delivery solution.</li>
+        <li>Conducted market research to identify the target audience.</li>
+        <li>Planned outreach strategies to reach potential users.</li>
+    </ul>
+
+    <h3>Project Head at Automation Anywhere, Virtual</h3>
+    <p>April 2022 – July 2023</p>
+    <ul>
+        <li>Developed bots to enhance clarity in scanned invoices and receipts.</li>
+        <li>Led troubleshooting efforts to resolve project delays and streamline performance.</li>
+    </ul>
 
             <h3>Student Intern at White Gold Technologies LLP, Mumbai</h3>
             <p>March 2021 – August 2021</p>
@@ -239,8 +275,8 @@
             <p>B.S in Electrical Engineering</p>
             <p>August 2021 – Present</p>
             <ul>
-                <li>Junior studying Electrical Engineering</li>
-                <li>Minor in Robotics</li>
+                <li>Senior studying Electrical Engineering</li>
+                <li>Specialization in Controls Robotics and Autonomy</li>
             </ul>
 
             <h3>Jai Hind College, Mumbai</h3>
@@ -259,22 +295,23 @@
         </section>
 
         <section id="projects">
-            <h2>Projects</h2>
-            <ul>
-                <li><a href="javascript:void(0)" onclick="toggleProjectDetail('project1')">Fire Alarm System Using IC555</a></li>
-                <li><a href="javascript:void(0)" onclick="toggleProjectDetail('project2')">Obstacle Avoidance Car Using IC</a></li>
-                <li><a href="javascript:void(0)" onclick="toggleProjectDetail('project3')">Pattern Flying Drone</a></li>
-                <li><a href="javascript:void(0)" onclick="toggleProjectDetail('project4')">Heated Cup Holder</a></li>
-                <li><a href="javascript:void(0)" onclick="toggleProjectDetail('project5')">Dinosaur Game on BOOSTXL-EDUMKII and MSP432</a></li>
-                <li><a href="javascript:void(0)" onclick="toggleProjectDetail('project6')">Reaction Time Tester</a></li>
-                <li><a href="javascript:void(0)" onclick="toggleProjectDetail('project7')">LED Pattern Circuit</a></li>
-            </ul>
-        </section>
+    <h2>Projects</h2>
+    <ul>
+        <li><a href="javascript:void(0)" onclick="toggleProjectDetail('project1')">Fire Alarm System Using IC555</a></li>
+        <li><a href="javascript:void(0)" onclick="toggleProjectDetail('project2')">Obstacle Avoidance Car Using IC</a></li>
+        <li><a href="javascript:void(0)" onclick="toggleProjectDetail('project3')">Pattern Flying Drone</a></li>
+        <li><a href="javascript:void(0)" onclick="toggleProjectDetail('project4')">Heated Cup Holder</a></li>
+        <li><a href="javascript:void(0)" onclick="toggleProjectDetail('project5')">Dinosaur Game on BOOSTXL-EDUMKII and MSP432</a></li>
+        <li><a href="javascript:void(0)" onclick="toggleProjectDetail('project6')">Reaction Time Tester</a></li>
+        <li><a href="javascript:void(0)" onclick="toggleProjectDetail('project7')">LED Pattern Circuit</a></li>
+        <li><a href="javascript:void(0)" onclick="toggleProjectDetail('project8')">Home Audio System Project</a></li>
+    </ul>
+</section>
 
         <section id="project1" class="project-detail" style="margin-top: 30px;">
             <h2>Fire Alarm System Using IC555</h2>
             <p><strong>Description:</strong></p>
-            <p>The Fire Alarm System is a simple and cost-effective solution designed to detect fire and alert users. Utilizing the IC555 timer, the system is capable of sensing temperature changes and triggering an alarm when a specified threshold is exceeded.</p>
+            <p>The Fire Alarm System is a simple and cost-effective solution designed to detect fire and alert users. Utilizing the IC555 timer, the system is capable of sensing smoke fill up in the room and triggering an alarm when a threshold is exceeded.</p>
             <p><strong>Goals:</strong></p>
             <ul>
                 <li>To develop a reliable and affordable fire alarm system.</li>
@@ -284,26 +321,26 @@
             <p><strong>Technologies Used:</strong></p>
             <ul>
                 <li>IC555 Timer: The core component for the timing and detection circuit.</li>
-                <li>Thermistor: A temperature-sensitive resistor used to detect temperature changes.</li>
+                <li>Thermistor: A resistor used to detect smoke in the room.</li>
                 <li>Buzzer: An audio alert component to sound the alarm.</li>
                 <li>Resistors and Capacitors: For circuit stability and proper functioning.</li>
                 <li>Power Supply: To power the circuit components.</li>
             </ul>
             <p><strong>Features:</strong></p>
             <ul>
-                <li>Temperature Detection: Senses temperature rise using a thermistor.</li>
+                <li>Smoke Detection: Senses smoke using a thermistor.</li>
                 <li>Audible Alarm: Emits a loud sound to alert users of potential fire.</li>
                 <li>Compact Design: Easy to install and maintain.</li>
                 <li>Low Cost: Economical components ensure affordability.</li>
             </ul>
             <p><strong>Challenges:</strong></p>
             <ul>
-                <li>Sensitivity Calibration: Adjusting the thermistor and IC555 circuit to accurately detect significant temperature changes without false alarms.</li>
+                <li>Sensitivity Calibration: Adjusting the thermistor and IC555 circuit to accurately detect significant smoke without false alarms.</li>
                 <li>Power Management: Ensuring the circuit operates efficiently with minimal power consumption.</li>
                 <li>Component Sourcing: Finding high-quality and reliable components within budget constraints.</li>
             </ul>
             <p><strong>Outcome:</strong></p>
-            <p>The project successfully produced a functioning fire alarm system that effectively detects temperature rises and sounds an alarm. It proved to be a valuable learning experience in circuit design and practical applications of the IC555 timer.</p>
+            <p>The project successfully produced a functioning fire alarm system that effectively detects smoke and sounds an alarm. It proved to be a valuable learning experience in circuit design and practical applications of the IC555 timer.</p>
         </section>
 
         <section id="project2" class="project-detail" style="margin-top: 30px;">
@@ -520,7 +557,47 @@
             </ul>
             <p><strong>Outcome:</strong></p>
             <p>The project successfully created an LED pattern circuit that can display various sequences using an Arduino. It provided valuable experience in basic electronics, circuit design, and embedded programming.</p>
+
         </section>
+<section id="project8" class="project-detail" style="margin-top: 30px;">
+    <h2>Home Audio System Project</h2>
+    <p><strong>Description:</strong></p>
+    <p>An integrated audio platform combining a graphic equalizer, class-D amplifier, and OLED spectrogram display. The system processes audio input, enhances user control over sound frequencies, and visualizes real-time signal levels.</p>
+
+    <p><strong>Goals:</strong></p>
+    <ul>
+        <li>To develop an end-to-end audio processing system with adjustable frequency bands and high-efficiency amplification.</li>
+        <li>To integrate real-time visualization via OLED for enhanced user experience.</li>
+        <li>To apply analog/digital circuit design, signal processing, and microcontroller programming in one unified platform.</li>
+    </ul>
+
+    <p><strong>Technologies Used:</strong></p>
+    <ul>
+        <li>Graphic Equalizer: 2-stage RC bandpass filters for bass (60–500 Hz), mid (600 Hz–3 kHz), and treble (3–6 kHz).</li>
+        <li>Class-D Amplifier: PWM modulator with triangle and comparator circuit; RLC low-pass output filter.</li>
+        <li>OLED Display: Arduino-driven spectrogram displaying intensity of each frequency band in real-time.</li>
+        <li>LTspice: Simulation of filters, amplifier stages, and waveform validation.</li>
+        <li>Analog Discovery 2: Hardware-level frequency and distortion testing.</li>
+    </ul>
+
+    <p><strong>Features:</strong></p>
+    <ul>
+        <li>Adjustable gain control for bass, mid, and treble using potentiometers.</li>
+        <li>High-efficiency class-D amplification using NMOS/PMOS switching and RLC filtering.</li>
+        <li>OLED spectrogram updates every 200 ms, reflecting live frequency intensity data.</li>
+        <li>Intuitive hardware and UI design including welcome screen and dynamic bar graph rendering.</li>
+    </ul>
+
+    <p><strong>Challenges:</strong></p>
+    <ul>
+        <li>Signal noise from Arduino mitigated via averaging and thresholding techniques.</li>
+        <li>Initial PWM switching overlap fixed by adding dead-time between transistor transitions.</li>
+        <li>Ripple voltage at amplifier output reduced through RLC component recalibration.</li>
+    </ul>
+
+    <p><strong>Outcome:</strong></p>
+    <p>The system was successfully validated via oscilloscope and spectrum analysis tools, showing low harmonic distortion and accurate band separation. The project demonstrated efficient subsystem integration, engineering design maturity, and user-centric audio visualization. It provides a solid base for future extensions including Bluetooth streaming and advanced frequency analysis.</p>
+</section>
 
         <section id="skills">
             <h2>Skills</h2>
@@ -539,17 +616,28 @@
                 <li>★★★☆☆ Arduino</li>
             </ul>
         </section>
+<section id="certifications">
+    <h2>Certifications & Online Courses</h2>
+    <ul>
+        <li>Digital Marketing – Google Garage</li>
+        <li>Machine Learning – Google Garage</li>
+        <li>SolidWorks Course – LinkedIn Learning</li>
+    </ul>
+</section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: krish0728@vt.edu</p>
-            <p>Phone: +91 8879001177</p>
-            <p>Location: Mumbai, India</p>
-        </section>
-    </section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>📧 Email: <a href="mailto:krish0728@vt.edu">krish0728@vt.edu</a></p>
+    <p>📞 Phone: <a href="tel:+918879001177">+91 8879001177</a></p>
+    <p>🌐 LinkedIn: <a href="https://www.linkedin.com/in/krishshah/" target="_blank">linkedin.com/in/krishshah</a></p>
+    <p>📍 Location: Mumbai, India</p>
+</section>
+
+
 
     <footer>
-        <p>Krish Ankur Shah &copy; 2024</p>
+        <p>Krish Ankur Shah &copy; 2025</p>
     </footer>
 </body>
 </html>
